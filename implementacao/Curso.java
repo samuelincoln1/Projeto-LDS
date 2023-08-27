@@ -3,7 +3,7 @@ package implementacao;
 import java.util.List;
 
 public class Curso {
-    
+
     public String nome;
     public int creditos;
 
@@ -24,4 +24,8 @@ public class Curso {
     }
 
     public List<Disciplina> disciplinas;
+
+    public void adicionarDisciplina(){
+        return;
+    }
 }

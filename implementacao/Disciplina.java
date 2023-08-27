@@ -19,4 +19,12 @@ public class Disciplina {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public void matricularAlunos(){
+        return;
+    }
+
+    public void cancelarMatricula(){
+        return;
+    }
 }

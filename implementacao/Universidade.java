@@ -83,26 +83,6 @@ public class Universidade {
         }
     }
 
-    // private void carregarDisciplinas() throws Exception {
-    //     try {
-    //         BufferedReader reader = new BufferedReader(new FileReader("implementacao/cursos.txt"));
-    //         String linha;
-            
-    //         while ((linha = reader.readLine()) != null) {
-    //             StringTokenizer str = new StringTokenizer(linha, ";");
-    //             str.nextToken();
-    //             str.nextToken();
-    //             while (str.hasMoreTokens()) {
-    //                 String disciplina = str.nextToken();
-    //                 disciplinas.put(disciplina, new Disciplina(disciplina));
-    //             }
-    //         }
-    //         reader.close();
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    // }
-
     public Pessoa login(String codPessoa, String senha) {
         pessoaAtual = pessoas.get(codPessoa);
         if (pessoaAtual == null) {

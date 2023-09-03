@@ -1,4 +1,4 @@
 Engenharia de software;5;Programacao;Projeto;Calculo;Algoritomos e estrutura de dados
 Medicina;8;Anatomia;Histologia;Imunologia;Patologia
-Direito;3;Direito romano;Direito Civil;Direito Penal;Direito Publico;
+Direito;3;Direito Romano;Direito Civil;Direito Penal;Direito Publico;
 Artes Cenicas;2;Antropologia;Escrita dramatica;Dramaturgia;

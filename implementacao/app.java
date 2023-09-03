@@ -48,10 +48,24 @@ public class app {
 
             switch(op) {
                 case 1:
-                    aluno.realizarMatricula();
+                    entrada.nextLine();
+                    System.out.println("Matricular-se em qual curso?");
+                    Curso cursoAtual = u.getCursos().get(entrada.nextLine());
+                    if (cursoAtual == null) {
+                        System.out.println("Curso nao encontrado!");
+                        break;
+                    }
+                    aluno.realizarMatricula(cursoAtual);
+                    
                     break;
                 case 2:
-                    aluno.cancelarMatricula();
+                    System.out.println("Cancelar matricula de qual curso?");
+                    cursoAtual = u.getCursos().get(entrada.nextLine());
+                    if (cursoAtual == null) {
+                        System.out.println("Curso nao encontrado!");
+                        break;
+                    }
+                    aluno.cancelarMatricula(cursoAtual);
                     break;
                 case 3:
                     // acessarMatriculaAtual();
@@ -94,7 +108,10 @@ public class app {
                         entrada.nextLine();
                         System.out.println("Visualizar disciplinas de qual curso?");
                         Curso cursoAtual = u.getCursos().get(entrada.nextLine());
-                        // System.out.println(cursoAtual.toString());
+                        if (cursoAtual == null) {
+                            System.out.println("Curso nao encontrado!");
+                            break;
+                        }
                         secretaria.gerarCurriculo(cursoAtual);
                         break;
                     case 3:

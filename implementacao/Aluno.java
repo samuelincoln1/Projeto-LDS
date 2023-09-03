@@ -17,11 +17,17 @@ public class Aluno extends Pessoa{
         return matricula;
     }
 
-    public boolean realizarMatricula(){
+    public boolean realizarMatricula(Curso curso){
+        for (int i=0; i<curso.getDisciplinas().size(); i++){
+            curso.getDisciplinas().get(i).adicionarAluno(this);
+        }
         return true;
     }
 
-    public boolean cancelarMatricula(){
+    public boolean cancelarMatricula(Curso curso){
+        for (int i=0; i<curso.getDisciplinas().size(); i++){
+            curso.getDisciplinas().get(i).removerAluno(this);
+        }
         return true;
     }
 

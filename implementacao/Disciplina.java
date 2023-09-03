@@ -1,30 +1,71 @@
 package implementacao;
 
-public class Disciplina {
-    public String alunosInscritos;
-    public boolean status;
+import java.util.ArrayList;
+import java.util.List;
 
-    public String getAlunosInscritos() {
-        return alunosInscritos;
+public class Disciplina {
+    private String nome;
+    private List<Aluno> alunosInscritos;
+    private boolean status;
+
+    public Disciplina (String nome) {
+        this.nome = nome;
+        alunosInscritos = new ArrayList<Aluno>();
     }
 
-    public void setAlunosInscritos(String alunosInscritos) {
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Aluno> getAlunosInscritos() {
+        return this.alunosInscritos;
+    }
+
+    public void setAlunosInscritos(List<Aluno> alunosInscritos) {
         this.alunosInscritos = alunosInscritos;
     }
 
     public boolean isStatus() {
-        return status;
+        return this.status;
+    }
+
+    public boolean getStatus() {
+        return this.status;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public void matricularAlunos(){
-        return;
+    public void adicionarAluno(Aluno aluno) {
+        alunosInscritos.add (aluno);
     }
 
-    public void cancelarMatricula(){
-        return;
+    public void removerAluno(Aluno aluno) {
+        alunosInscritos.remove(aluno);
     }
+
+    public boolean ativar() {
+        if (alunosInscritos.size()>=3) {
+            setStatus(true);
+            return status;
+        } else {
+            System.out.println("A disciplina precisa ter pelo menos 3 alunos inscritos");
+            return status;
+        }
+    }
+   
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + 
+            " | Quantidade de alunos matriculados:" + getAlunosInscritos().size() + 
+            "| Status da disciplina:" + isStatus() 
+           ;
+    }
+
 }

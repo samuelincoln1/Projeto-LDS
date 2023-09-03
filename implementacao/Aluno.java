@@ -33,7 +33,7 @@ public class Aluno extends Pessoa{
             "}";
     }
 
-    public String verDados() {
+    public String obterDados() {
         return "Codigo de pessoa: " + getCodPessoa() + "\nNumero de matricula: " + getMatricula() + "\nNome: " + getNome();
     }
 

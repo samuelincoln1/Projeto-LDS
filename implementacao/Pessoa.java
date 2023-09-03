@@ -1,27 +1,45 @@
 package implementacao;
 
 public class Pessoa {
-    public String Nome;
-    public int CodPessoa;
-    public String Senha;
+    private String nome;
+    private String codPessoa;
+    private String senha;
+
+    public Pessoa(String nome, String senha, String codPessoa) {
+        this.nome = nome;
+        this.senha = senha;
+        this.codPessoa = codPessoa;
+    }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
-    public int getCodPessoa() {
-        return CodPessoa;
+    public String getCodPessoa() {
+        return codPessoa;
     }
 
-    public void setCodPessoa(int codPessoa) {
-        CodPessoa = codPessoa;
+    public void setCodPessoa(String codPessoa) {
+        this.codPessoa = codPessoa;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " nome='" + getNome() + "'" +
+            ", codPessoa='" + getCodPessoa() + "'" +
+            ", senha='" + getSenha() + "'" +
+            "}";
+    }
+
+   
 }

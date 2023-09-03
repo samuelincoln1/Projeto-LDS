@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Curso {
 
-    public String nome;
-    public int creditos;
+    private String nome;
+    private int creditos;
 
     public String getNome() {
         return nome;

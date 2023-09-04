@@ -1,12 +1,15 @@
 package implementacao;
 
+
 public class Aluno extends Pessoa{
 
     private String matricula;
+    private Curso curso;
 
-    public Aluno(String nome, String senha, String codPessoa, String matricula) {
+    public Aluno(String nome, String senha, String codPessoa, String matricula, Curso curso) {
         super(nome, senha, codPessoa);
         this.matricula = matricula;
+        this.curso = curso;
     }
 
     public void setMatricula(String matricula) {
@@ -30,7 +33,19 @@ public class Aluno extends Pessoa{
         }
         return true;
     }
+    
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public static Curso converterStringParaCurso(String nomeCurso) {
+        return new Curso(nomeCurso);
+    }
 
     @Override
     public String toString() {
@@ -40,7 +55,7 @@ public class Aluno extends Pessoa{
     }
 
     public String obterDados() {
-        return "Codigo de pessoa: " + getCodPessoa() + "\nNumero de matricula: " + getMatricula() + "\nNome: " + getNome();
+        return "Codigo de pessoa: " + getCodPessoa() + "\nNumero de matricula: " + getMatricula() + "\nNome: " + getNome() + "\nCursos matriculados " + getCurso() ;
     }
 
 }

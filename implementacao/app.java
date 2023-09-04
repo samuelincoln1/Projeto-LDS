@@ -83,8 +83,45 @@ public class app {
     }
 
     public static void menuProfessor(Universidade u, Professor professor) {
-        System.out.println("Menu de professores");
+          int op;
+        do {
+                System.out.println();
+                System.out.println("Bem vindo de volta professor " + professor.getNome() + "!");
+                System.out.println("Selecione a opcao desejada");
+                System.out.println();
+                System.out.println("1 - Visualizar disciplinas");
+                System.out.println("2 - Visualizar alunos");
+                System.out.println("0 - Deslogar");
+                op = entrada.nextInt();
+
+                switch(op) {
+                    case 1:
+                        entrada.nextLine();
+                        System.out.println("Visualizar disciplinas de qual curso?");
+                        Curso cursoAtual = u.getCursos().get(entrada.nextLine());
+                        if (cursoAtual == null) {
+                            System.out.println("Curso nao encontrado!");
+                            break;
+                        }
+                        cursoAtual.mostrarDisciplinas(cursoAtual);
+                        
+                        break;
+                    case 2:
+                        entrada.nextLine();
+                        System.out.println("Visualizar alunos de qual curso?");
+                        Curso curso = u.getCursos().get(entrada.nextLine());
+                        professor.visualizarAlunos(curso);
+                        break;
+                case 0:
+                    System.out.println("Deslogado com sucesso");
+                    break;
+                default:
+                    System.out.println("Opcao invalida, tente novamente");
+            }
+               
+            } while(op !=0);
     }
+
 
     public static void menuSecretaria(Universidade u, Secretaria secretaria) {
             int op;

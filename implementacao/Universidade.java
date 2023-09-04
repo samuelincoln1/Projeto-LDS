@@ -48,7 +48,8 @@ public class Universidade {
                 String tipo = str.nextToken();
                 if (tipo.equals("a")) {
                     String matricula = str.nextToken();
-                    pessoaAtual = new Aluno(nome, senha, codPessoa, matricula);
+                    Curso curso = Aluno.converterStringParaCurso(str.nextToken());
+                    pessoaAtual = new Aluno(nome, senha, codPessoa, matricula, curso);
                 } else if (tipo.equals("s")) {
                     pessoaAtual = new Secretaria(nome, senha, codPessoa);
                 } else {

@@ -68,7 +68,7 @@ public class app {
                     aluno.cancelarMatricula(cursoAtual);
                     break;
                 case 3:
-                    // acessarMatriculaAtual();
+                   aluno.visualizarDisciplinas(aluno.getCurso());
                     break;
                 case 4:
                     System.out.println(aluno.obterDados());

@@ -1,5 +1,10 @@
 package implementacao;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno extends Pessoa{
 
@@ -46,6 +51,27 @@ public class Aluno extends Pessoa{
     public static Curso converterStringParaCurso(String nomeCurso) {
         return new Curso(nomeCurso);
     }
+
+     public void visualizarDisciplinas(Curso curso){
+
+        List<Disciplina> disciplinas = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("implementacao/cursos.txt"))) {
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                String[] partes = linha.split(";");
+                if (partes.length >= 3) {
+                    String disciplina1 = partes[2];
+                    disciplinas.add(new Disciplina(disciplina1));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(disciplinas);
+    }
+
 
     @Override
     public String toString() {

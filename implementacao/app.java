@@ -99,7 +99,12 @@ public class app {
 
                     if (aluno.adicionarDisciplina(add) == true){
                         System.out.println("Adicionado com sucesso!");
-
+                        for (int i = 0; i < cursoAux.getDisciplinas().size(); i++) {
+                            if (cursoAux.getDisciplinas().get(i).getNome().equals(opt)){
+                               cursoAux.getDisciplinas().get(i).adicionarAluno(aluno);
+                            }
+                        }
+                        
                     }
                     
                     else
@@ -109,6 +114,7 @@ public class app {
 
                     case 6:
                     entrada.nextLine();
+                    Curso cursoAux2 = aluno.getCurso();
                     if (aluno.getDisciplinas().size() == 0){
                         System.out.println("O aluno nao esta matriculado em nenhuma disciplina!");
                     }
@@ -129,8 +135,15 @@ public class app {
                                 remove = aluno.getDisciplinas().get(i);
                         }
 
-                        if (aluno.removerDisciplina(remove) == true)
+                        if (aluno.removerDisciplina(remove) == true) {
                             System.out.println("Disciplina removida com sucesso!");
+                            for (int i = 0; i < cursoAux2.getDisciplinas().size(); i++) {
+                                if (cursoAux2.getDisciplinas().get(i).getNome().equals(opt)){
+                                   cursoAux2.getDisciplinas().get(i).removerAluno(aluno);
+                                }
+                            }
+                            
+                        }
 
                         else
                            System.out.println("Erro ao remover disciplina, tente novamente."); 

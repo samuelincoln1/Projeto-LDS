@@ -37,7 +37,7 @@ public class Professor extends Pessoa{
         List<Aluno> todosOsAlunos = alunos;
         
         lista = todosOsAlunos.stream()
-                .filter(aluno -> aluno.getCurso().equals(curso))
+                .filter(aluno -> aluno.getCurso().getNome().equals(curso.getNome()))
                 .collect(Collectors.toList());
 
         System.out.println(lista);
